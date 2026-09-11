@@ -4,6 +4,7 @@ function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState('inicio');
+  const [logoError, setLogoError] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -39,11 +40,20 @@ function App() {
             {/* Logo */}
             <div className="flex items-center cursor-pointer" onClick={() => scrollToSection('inicio')}>
               <div className="flex items-center gap-3">
-                <div className={`w-10 h-10 rounded-full flex items-center justify-center ${scrolled ? 'bg-blue-600' : 'bg-white'} transition-colors`}>
-                  <svg className={`w-6 h-6 ${scrolled ? 'text-white' : 'text-blue-600'}`} fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
-                  </svg>
-                </div>
+                {!logoError ? (
+                  <img 
+                    src="/logo.png" 
+                    alt="Connections English School" 
+                    className="w-12 h-12 rounded-full object-cover"
+                    onError={() => setLogoError(true)}
+                  />
+                ) : (
+                  <div className={`w-12 h-12 rounded-full flex items-center justify-center ${scrolled ? 'bg-blue-600' : 'bg-white'} transition-colors`}>
+                    <svg className={`w-7 h-7 ${scrolled ? 'text-white' : 'text-blue-600'}`} fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+                    </svg>
+                  </div>
+                )}
                 <div>
                   <h1 className={`text-lg font-bold leading-tight ${scrolled ? 'text-gray-900' : 'text-white'} transition-colors`}>
                     Connections
@@ -133,7 +143,6 @@ function App() {
             <div className="absolute top-40 right-10 w-72 h-72 bg-purple-400 rounded-full mix-blend-multiply filter blur-xl animate-pulse delay-1000"></div>
             <div className="absolute bottom-20 left-1/3 w-72 h-72 bg-indigo-400 rounded-full mix-blend-multiply filter blur-xl animate-pulse delay-500"></div>
           </div>
-          {/* Pattern overlay */}
           <div className="absolute inset-0" style={{
             backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
           }}></div>
@@ -141,6 +150,18 @@ function App() {
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="animate-fade-in">
+            {/* Logo grande en el hero */}
+            {!logoError && (
+              <div className="mb-8 flex justify-center">
+                <img 
+                  src="/logo.png" 
+                  alt="Connections English School" 
+                  className="w-24 h-24 sm:w-32 sm:h-32 rounded-full object-cover shadow-2xl border-4 border-white/20"
+                  onError={() => setLogoError(true)}
+                />
+              </div>
+            )}
+            
             <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 mb-8">
               <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
               <span className="text-white/90 text-sm font-medium">Inscripciones abiertas 2026</span>
@@ -237,30 +258,64 @@ function App() {
               </div>
             </div>
 
-            <div className="relative">
-              <div className="bg-gradient-to-br from-blue-600 to-indigo-700 rounded-3xl p-8 lg:p-12 text-white relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-40 h-40 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2"></div>
-                <div className="absolute bottom-0 left-0 w-32 h-32 bg-white/10 rounded-full translate-y-1/2 -translate-x-1/2"></div>
-                
-                <div className="relative z-10">
-                  <h3 className="text-2xl font-bold mb-4">¿Por qué elegirnos?</h3>
-                  <ul className="space-y-4">
-                    {[
-                      'Docentes con formación en lingüística y didáctica',
-                      'Sistema de evaluación continuo y personalizado',
-                      'Actividades extracurriculares en inglés',
-                      'Horarios flexibles mañana, tarde y noche',
-                      'Tecnología aplicada al aprendizaje',
-                      'Ubicaciones céntricas y accesibles',
-                    ].map((item, i) => (
-                      <li key={i} className="flex items-start gap-3">
-                        <svg className="w-5 h-5 text-blue-300 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                        </svg>
-                        <span className="text-blue-100">{item}</span>
-                      </li>
-                    ))}
-                  </ul>
+            {/* Galería de instalaciones */}
+            <div className="grid grid-cols-2 gap-4">
+              <div className="space-y-4">
+                <div className="rounded-2xl overflow-hidden shadow-lg h-48 bg-gradient-to-br from-blue-100 to-blue-200 flex items-center justify-center relative group">
+                  <img 
+                    src="/aula-1.jpg" 
+                    alt="Aula Connections English School" 
+                    className="w-full h-full object-cover"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      target.style.display = 'none';
+                      target.parentElement!.querySelector('.placeholder')?.classList.remove('hidden');
+                    }}
+                  />
+                  <div className="placeholder hidden absolute inset-0 flex flex-col items-center justify-center text-blue-600">
+                    <svg className="w-12 h-12 mb-2 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                    </svg>
+                    <span className="text-xs font-medium">aula-1.jpg</span>
+                  </div>
+                </div>
+                <div className="rounded-2xl overflow-hidden shadow-lg h-64 bg-gradient-to-br from-indigo-100 to-indigo-200 flex items-center justify-center relative group">
+                  <img 
+                    src="/aula-2.jpg" 
+                    alt="Actividades Connections" 
+                    className="w-full h-full object-cover"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      target.style.display = 'none';
+                      target.parentElement!.querySelector('.placeholder')?.classList.remove('hidden');
+                    }}
+                  />
+                  <div className="placeholder hidden absolute inset-0 flex flex-col items-center justify-center text-indigo-600">
+                    <svg className="w-12 h-12 mb-2 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                    </svg>
+                    <span className="text-xs font-medium">aula-2.jpg</span>
+                  </div>
+                </div>
+              </div>
+              <div className="pt-8">
+                <div className="rounded-2xl overflow-hidden shadow-lg h-80 bg-gradient-to-br from-purple-100 to-purple-200 flex items-center justify-center relative group">
+                  <img 
+                    src="/instalaciones-1.jpg" 
+                    alt="Instalaciones Connections" 
+                    className="w-full h-full object-cover"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      target.style.display = 'none';
+                      target.parentElement!.querySelector('.placeholder')?.classList.remove('hidden');
+                    }}
+                  />
+                  <div className="placeholder hidden absolute inset-0 flex flex-col items-center justify-center text-purple-600">
+                    <svg className="w-12 h-12 mb-2 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                    </svg>
+                    <span className="text-xs font-medium">instalaciones-1.jpg</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -365,8 +420,63 @@ function App() {
         </div>
       </section>
 
-      {/* Schedule Section */}
+      {/* Gallery Section - Instalaciones */}
       <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <span className="text-blue-600 font-semibold text-sm uppercase tracking-wider">Galería</span>
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mt-3 mb-4">
+              Conocé nuestras instalaciones
+            </h2>
+            <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+              Espacios modernos y cómodos diseñados para el aprendizaje del inglés.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+            {[
+              { src: '/instalaciones-1.jpg', alt: 'Fachada sede centro', label: 'Sede Centro - Salta 285' },
+              { src: '/instalaciones-2.jpg', alt: 'Fachada sede oeste', label: 'Sede Oeste - Rodhe 150' },
+              { src: '/aula-1.jpg', alt: 'Aula de clases', label: 'Aulas modernas' },
+              { src: '/aula-2.jpg', alt: 'Sala de actividades', label: 'Sala de actividades' },
+            ].map((img, i) => (
+              <div key={i} className={`rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all group cursor-pointer ${i === 0 ? 'md:col-span-2 md:row-span-2' : ''}`}>
+                <div className={`relative ${i === 0 ? 'h-64 md:h-full' : 'h-48'} bg-gradient-to-br from-blue-100 to-indigo-200 flex items-center justify-center`}>
+                  <img 
+                    src={img.src} 
+                    alt={img.alt}
+                    className="w-full h-full object-cover absolute inset-0"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      target.style.display = 'none';
+                    }}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+                    <span className="text-white font-medium text-sm">{img.label}</span>
+                  </div>
+                  {/* Placeholder cuando no hay imagen */}
+                  <div className="flex flex-col items-center justify-center text-blue-400 z-10">
+                    <svg className="w-10 h-10 mb-2 opacity-40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                    </svg>
+                    <span className="text-xs font-medium opacity-60">{img.src.replace('/','')}</span>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+          
+          {/* Nota sobre las imágenes */}
+          <div className="mt-8 bg-blue-50 border border-blue-100 rounded-xl p-4 text-center">
+            <p className="text-blue-700 text-sm">
+              💡 <strong>Tip:</strong> Subí tus fotos a la carpeta <code className="bg-blue-100 px-2 py-0.5 rounded">public/</code> con los nombres indicados para que aparezcan automáticamente.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Schedule Section */}
+      <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <span className="text-blue-600 font-semibold text-sm uppercase tracking-wider">Horarios</span>
@@ -399,7 +509,7 @@ function App() {
                 description: 'La mejor opción para quienes trabajan o estudian durante el día.',
               },
             ].map((schedule, i) => (
-              <div key={i} className="text-center p-8 rounded-2xl border border-gray-100 hover:border-blue-200 hover:shadow-lg transition-all">
+              <div key={i} className="text-center p-8 rounded-2xl border border-gray-100 hover:border-blue-200 hover:shadow-lg transition-all bg-white">
                 <span className="text-4xl mb-4 block">{schedule.icon}</span>
                 <h3 className="text-xl font-bold text-gray-900 mb-2">{schedule.time}</h3>
                 <p className="text-blue-600 font-semibold mb-3">{schedule.hours}</p>
@@ -411,7 +521,7 @@ function App() {
       </section>
 
       {/* Locations Section */}
-      <section id="sucursales" className="py-20 lg:py-28 bg-gray-50">
+      <section id="sucursales" className="py-20 lg:py-28 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <span className="text-blue-600 font-semibold text-sm uppercase tracking-wider">Sucursales</span>
@@ -425,24 +535,30 @@ function App() {
 
           <div className="grid md:grid-cols-2 gap-8">
             {/* Sucursal 1 */}
-            <div className="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all overflow-hidden group">
-              <div className="bg-gradient-to-r from-blue-600 to-blue-700 p-8 text-white relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2"></div>
-                <div className="relative z-10">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center">
-                      <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
-                      </svg>
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-bold">Sucursal Centro</h3>
-                      <p className="text-blue-200 text-sm">Zona céntrica</p>
-                    </div>
+            <div className="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all overflow-hidden group border border-gray-100">
+              <div className="h-48 bg-gradient-to-br from-blue-100 to-blue-200 relative overflow-hidden">
+                <img 
+                  src="/instalaciones-1.jpg" 
+                  alt="Sucursal Salta 285"
+                  className="w-full h-full object-cover"
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    target.style.display = 'none';
+                  }}
+                />
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="text-center text-blue-600">
+                    <svg className="w-12 h-12 mx-auto mb-2 opacity-40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                    </svg>
+                    <span className="text-xs font-medium opacity-60">instalaciones-1.jpg</span>
                   </div>
                 </div>
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/50 to-transparent p-4">
+                  <h3 className="text-white text-lg font-bold">Sucursal Centro</h3>
+                </div>
               </div>
-              <div className="p-8">
+              <div className="p-6">
                 <div className="space-y-4">
                   <div className="flex items-start gap-4">
                     <div className="w-10 h-10 bg-blue-50 rounded-lg flex items-center justify-center flex-shrink-0">
@@ -480,39 +596,56 @@ function App() {
                     </div>
                   </div>
                 </div>
-                <a
-                  href="https://www.google.com/maps/search/Salta+285+Neuquén"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-6 w-full inline-flex items-center justify-center gap-2 bg-blue-50 hover:bg-blue-100 text-blue-700 py-3 rounded-xl font-medium transition-all text-sm"
-                >
-                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
-                  </svg>
-                  Ver en Google Maps
-                </a>
+                <div className="mt-6 flex gap-3">
+                  <a
+                    href="https://www.google.com/maps/search/Salta+285+Neuquén"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 inline-flex items-center justify-center gap-2 bg-blue-50 hover:bg-blue-100 text-blue-700 py-3 rounded-xl font-medium transition-all text-sm"
+                  >
+                    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
+                    </svg>
+                    Ver en Maps
+                  </a>
+                  <a
+                    href="tel:2994042105"
+                    className="flex-1 inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-xl font-medium transition-all text-sm"
+                  >
+                    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+                    </svg>
+                    Llamar
+                  </a>
+                </div>
               </div>
             </div>
 
             {/* Sucursal 2 */}
-            <div className="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all overflow-hidden group">
-              <div className="bg-gradient-to-r from-indigo-600 to-purple-700 p-8 text-white relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2"></div>
-                <div className="relative z-10">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center">
-                      <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
-                      </svg>
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-bold">Sucursal Oeste</h3>
-                      <p className="text-purple-200 text-sm">Zona residencial</p>
-                    </div>
+            <div className="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all overflow-hidden group border border-gray-100">
+              <div className="h-48 bg-gradient-to-br from-purple-100 to-purple-200 relative overflow-hidden">
+                <img 
+                  src="/instalaciones-2.jpg" 
+                  alt="Sucursal Rodhe 150"
+                  className="w-full h-full object-cover"
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    target.style.display = 'none';
+                  }}
+                />
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="text-center text-purple-600">
+                    <svg className="w-12 h-12 mx-auto mb-2 opacity-40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                    </svg>
+                    <span className="text-xs font-medium opacity-60">instalaciones-2.jpg</span>
                   </div>
                 </div>
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/50 to-transparent p-4">
+                  <h3 className="text-white text-lg font-bold">Sucursal Oeste</h3>
+                </div>
               </div>
-              <div className="p-8">
+              <div className="p-6">
                 <div className="space-y-4">
                   <div className="flex items-start gap-4">
                     <div className="w-10 h-10 bg-purple-50 rounded-lg flex items-center justify-center flex-shrink-0">
@@ -550,17 +683,28 @@ function App() {
                     </div>
                   </div>
                 </div>
-                <a
-                  href="https://www.google.com/maps/search/Rodhe+150+Neuquén"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-6 w-full inline-flex items-center justify-center gap-2 bg-purple-50 hover:bg-purple-100 text-purple-700 py-3 rounded-xl font-medium transition-all text-sm"
-                >
-                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
-                  </svg>
-                  Ver en Google Maps
-                </a>
+                <div className="mt-6 flex gap-3">
+                  <a
+                    href="https://www.google.com/maps/search/Rodhe+150+Neuquén"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 inline-flex items-center justify-center gap-2 bg-purple-50 hover:bg-purple-100 text-purple-700 py-3 rounded-xl font-medium transition-all text-sm"
+                  >
+                    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
+                    </svg>
+                    Ver en Maps
+                  </a>
+                  <a
+                    href="tel:2995067544"
+                    className="flex-1 inline-flex items-center justify-center gap-2 bg-purple-600 hover:bg-purple-700 text-white py-3 rounded-xl font-medium transition-all text-sm"
+                  >
+                    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+                    </svg>
+                    Llamar
+                  </a>
+                </div>
               </div>
             </div>
           </div>
@@ -568,7 +712,7 @@ function App() {
       </section>
 
       {/* Contact Section */}
-      <section id="contacto" className="py-20 lg:py-28 bg-white">
+      <section id="contacto" className="py-20 lg:py-28 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <span className="text-blue-600 font-semibold text-sm uppercase tracking-wider">Contacto</span>
@@ -583,7 +727,7 @@ function App() {
           <div className="grid lg:grid-cols-5 gap-12">
             {/* Contact Form */}
             <div className="lg:col-span-3">
-              <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
+              <form className="space-y-6 bg-white rounded-2xl p-8 shadow-sm" onSubmit={(e) => e.preventDefault()}>
                 <div className="grid sm:grid-cols-2 gap-6">
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">Nombre</label>
@@ -756,11 +900,20 @@ function App() {
             {/* Brand */}
             <div className="md:col-span-2">
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center">
-                  <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
-                  </svg>
-                </div>
+                {!logoError ? (
+                  <img 
+                    src="/logo.png" 
+                    alt="Connections English School" 
+                    className="w-10 h-10 rounded-full object-cover"
+                    onError={() => setLogoError(true)}
+                  />
+                ) : (
+                  <div className="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center">
+                    <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+                    </svg>
+                  </div>
+                )}
                 <div>
                   <h3 className="text-lg font-bold">Connections</h3>
                   <p className="text-blue-400 text-xs font-medium">English School</p>
@@ -776,13 +929,19 @@ function App() {
             <div>
               <h4 className="font-semibold text-white mb-4">Enlaces rápidos</h4>
               <ul className="space-y-3">
-                {['Inicio', 'Nosotros', 'Cursos', 'Sucursales', 'Contacto'].map((item) => (
-                  <li key={item}>
+                {[
+                  { id: 'inicio', label: 'Inicio' },
+                  { id: 'nosotros', label: 'Nosotros' },
+                  { id: 'cursos', label: 'Cursos' },
+                  { id: 'sucursales', label: 'Sucursales' },
+                  { id: 'contacto', label: 'Contacto' },
+                ].map((item) => (
+                  <li key={item.id}>
                     <button
-                      onClick={() => scrollToSection(item.toLowerCase())}
+                      onClick={() => scrollToSection(item.id)}
                       className="text-gray-400 hover:text-white transition-colors text-sm"
                     >
-                      {item}
+                      {item.label}
                     </button>
                   </li>
                 ))}
