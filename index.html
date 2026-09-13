@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Connections English School | Instituto de Inglés en Neuquén - Sede Salta y Rodhe</title>
-  <meta name="description" content="Connections English School: Instituto de inglés líder en Neuquén Capital. Cursos para niños, adolescentes, adultos y preparación de exámenes internacionales Cambridge. Sedes en Salta 285 y Rodhe 150.">
+  <meta name="description" content="Connections English School: Instituto de inglés líder en Neuquén Capital. Cursos dinámicos para niños, jóvenes y adultos. Preparación de exámenes Cambridge. Sedes en Salta 285 y Rodhe 150.">
   <meta name="keywords" content="ingles neuquen, instituto de ingles neuquen, connection english school, connections english school, cursos de ingles neuquen, cambridge neuquen, ingles salta 285, ingles rodhe 150">
   
   <!-- Google Fonts: Plus Jakarta Sans -->
@@ -15,6 +15,7 @@
   <!-- Custom Stylesheet -->
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" type="image/png" href="logo.png">
+  <link rel="alternate icon" type="image/svg+xml" href="logo.svg">
 </head>
 <body>
 
@@ -40,7 +41,7 @@
         </div>
       </div>
       <div>
-        <span style="color: #f97316; font-weight: 700;">✨ Inscripciones Abiertas</span> • Ciclo Lectivo & Talleres Intensivos
+        <span style="color: #ff8800; font-weight: 800;">✨ Inscripciones Abiertas</span> • Ciclo Lectivo & Talleres Especiales
       </div>
     </div>
   </div>
@@ -50,7 +51,10 @@
     <div class="container">
       <nav class="navbar">
         <a href="#inicio" class="brand-logo-wrapper">
-          <img src="logo.png" alt="Connections English School Logo" class="brand-logo-img">
+          <!-- Logo Badge with padding to ensure zero clipping -->
+          <div class="brand-logo-badge">
+            <img src="logo.png" onerror="if(!this.dataset.tried){this.dataset.tried='1';this.src='logo.jpg';}" alt="Connections English School Logo" class="brand-logo-img">
+          </div>
           <div class="brand-title">
             Connections
             <span>English School</span>
@@ -61,13 +65,17 @@
           <li><a href="#inicio" class="nav-link active">Inicio</a></li>
           <li><a href="#sedes" class="nav-link">Sedes</a></li>
           <li><a href="#cursos" class="nav-link">Cursos</a></li>
-          <li><a href="#metodologia" class="nav-link">Metodología</a></li>
+          <li><a href="#audio-lab" class="nav-link">Laboratorio Oral</a></li>
           <li><a href="#test-nivel" class="nav-link">Test de Nivel</a></li>
           <li><a href="#comunidad" class="nav-link">Instagram</a></li>
           <li><a href="#contacto" class="nav-link">Contacto</a></li>
         </ul>
 
         <div class="nav-actions">
+          <!-- Theme Switcher Button -->
+          <button class="theme-toggle-btn" id="themeToggle" title="Cambiar tema de color" aria-label="Cambiar tema">
+            🌙
+          </button>
           <a href="https://www.instagram.com/connections.english.school/" target="_blank" rel="noopener" class="btn btn-instagram btn-sm" aria-label="Instagram">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
             Instagram
@@ -91,19 +99,19 @@
     </div>
   </header>
 
-  <!-- 3. HERO SECTION -->
+  <!-- 3. HERO SECTION WITH DYNAMIC MESH GLOW & EMBLEM BADGE -->
   <section class="hero" id="inicio">
     <div class="container">
       <div class="hero-grid">
         <div class="hero-content">
-          <div class="badge badge-primary">
-            🎓 Tu instituto de confianza en Neuquén
+          <div class="badge badge-glow-orange">
+            🚀 Inglés Vivencial & Comunicativo en Neuquén
           </div>
           <h1 class="hero-title">
             Conectamos tu futuro con el mundo <span class="text-gradient">a través del inglés</span>
           </h1>
           <p class="hero-desc">
-            En <strong>Connections English School</strong> te acompañamos a dominar el idioma con un método comunicativo, dinámico y grupos reducidos. Aprendé a hablar con seguridad desde la primera clase.
+            En <strong>Connections English School</strong> te acompañamos a dominar el idioma con clases dinámicas, grupos reducidos y atención cercana. Aprendé a expresarte con total confianza desde la primera clase.
           </p>
 
           <div class="hero-location-pills">
@@ -139,36 +147,48 @@
             </div>
             <div class="stat-item">
               <h3>100%</h3>
-              <p>Grupos reducidos y enfoque conversacional</p>
+              <p>Enfoque oral y grupos reducidos</p>
             </div>
           </div>
         </div>
 
         <div class="hero-visual">
           <div class="hero-card-main">
-            <div class="hero-logo-box">
-              <img src="logo.png" alt="Connections English School Emblema" class="hero-logo-img">
+            <!-- Floating interactive pills -->
+            <div class="hero-floating-badge b1">
+              <span>💬</span> Speak English from Day 1
             </div>
+            <div class="hero-floating-badge b2">
+              <span>🇬🇧</span> Cambridge Exam Prep
+            </div>
+
+            <!-- Emblem Badge: 100% complete circular view, never clipped -->
+            <div class="hero-logo-box">
+              <div class="hero-logo-badge">
+                <img src="logo.png" onerror="if(!this.dataset.tried){this.dataset.tried='1';this.src='logo.jpg';}" alt="Connections English School Emblema" class="hero-logo-img">
+              </div>
+            </div>
+
             <div class="hero-feature-tags">
               <div class="feature-tag-row">
-                <div class="feature-tag-icon" style="background: rgba(249, 115, 22, 0.15); color: #ea580c;">🌟</div>
+                <div class="feature-tag-icon" style="background: rgba(255, 107, 0, 0.15); color: #ea580c;">🌟</div>
                 <div>
                   <strong>Aprende a comunicarte</strong>
-                  <div style="font-size: 0.8rem; color: #64748b;">Práctica oral continua en cada clase</div>
+                  <div style="font-size: 0.8rem; color: var(--text-muted);">Práctica oral real en cada clase</div>
                 </div>
               </div>
               <div class="feature-tag-row">
                 <div class="feature-tag-icon" style="background: rgba(6, 182, 212, 0.15); color: #0891b2;">🎯</div>
                 <div>
                   <strong>Exámenes Cambridge & IELTS</strong>
-                  <div style="font-size: 0.8rem; color: #64748b;">Preparación integral y simulacros reales</div>
+                  <div style="font-size: 0.8rem; color: var(--text-muted);">Simulacros oficiales y certificación global</div>
                 </div>
               </div>
               <div class="feature-tag-row">
                 <div class="feature-tag-icon" style="background: rgba(16, 185, 129, 0.15); color: #059669;">👥</div>
                 <div>
                   <strong>Grupos reducidos</strong>
-                  <div style="font-size: 0.8rem; color: #64748b;">Atención personalizada para cada estudiante</div>
+                  <div style="font-size: 0.8rem; color: var(--text-muted);">Atención personalizada y seguimiento docente</div>
                 </div>
               </div>
             </div>
@@ -178,15 +198,71 @@
     </div>
   </section>
 
-  <!-- 4. SEDES SECTION (SALTA 285 & RODHE 150) CON MAPAS EMBEBIDOS -->
+  <!-- 4. INTERACTIVE PRONUNCIATION LAB -->
+  <section class="pronunciation-bar" id="audio-lab">
+    <div class="container">
+      <div class="pronounce-box">
+        <div class="pronounce-intro">
+          <div class="badge badge-glow-orange" style="color: #fed7aa; border-color: rgba(255,107,0,0.4);">
+            Audio Interactivo
+          </div>
+          <h3>Laboratorio de Pronunciación</h3>
+          <p>
+            En Connections practicamos la fonética con naturalidad. Hacé clic en los botones para escuchar la pronunciación nativa de frases cotidianas:
+          </p>
+        </div>
+
+        <div class="phrase-cards-carousel">
+          <div class="phrase-card">
+            <div class="phrase-en">"Lend me a hand"</div>
+            <div class="phrase-es">Dame una mano / Ayudame</div>
+            <button type="button" class="phrase-btn-listen" data-phrase="Could you please lend me a hand?">
+              🔊 Escuchar audio
+            </button>
+          </div>
+
+          <div class="phrase-card">
+            <div class="phrase-en">"Looking forward"</div>
+            <div class="phrase-es">Esperar con entusiasmo</div>
+            <button type="button" class="phrase-btn-listen" data-phrase="I am looking forward to our next English class!">
+              🔊 Escuchar audio
+            </button>
+          </div>
+
+          <div class="phrase-card">
+            <div class="phrase-en">"Catch up soon"</div>
+            <div class="phrase-es">Ponerse al día pronto</div>
+            <button type="button" class="phrase-btn-listen" data-phrase="Let's grab a coffee and catch up soon!">
+              🔊 Escuchar audio
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. SEDES SECTION (INTERACTIVE SWITCHER + GOOGLE MAPS) -->
   <section class="section sedes-section" id="sedes">
     <div class="container">
       <div class="section-header">
-        <div class="badge badge-orange">Ubicaciones Estratégicas</div>
+        <div class="badge badge-glow-orange">Ubicaciones en Neuquén</div>
         <h2 class="section-title">Nuestras 2 Sedes en Neuquén Capital</h2>
         <p class="section-subtitle">
-          Elegí la sede más cercana a tu hogar, colegio o lugar de trabajo. Ambas sucursales cuentan con aulas climatizadas, tecnología multimedia, mapas de fácil acceso y el mismo estándar docente.
+          Elegí la sede más conveniente para vos. Ambas sucursales cuentan con aulas climatizadas, tecnología multimedia, mapas integrados y el mismo prestigio académico.
         </p>
+      </div>
+
+      <!-- Sede Filter Buttons -->
+      <div class="sede-toggle-bar">
+        <button class="sede-toggle-btn active salta" data-sede="all">
+          ✨ Ver Ambas Sedes
+        </button>
+        <button class="sede-toggle-btn salta" data-sede="salta">
+          📍 Sede Salta 285 (Centro)
+        </button>
+        <button class="sede-toggle-btn rodhe" data-sede="rodhe">
+          🏛️ Sede Rodhe 150 (Residencial)
+        </button>
       </div>
 
       <div class="sedes-grid">
@@ -213,28 +289,28 @@
 
           <ul class="sede-info-list">
             <li class="sede-info-item">
-              <div class="sede-icon-circle" style="color: #ea580c; background: rgba(249,115,22,0.1);">📍</div>
+              <div class="sede-icon-circle" style="color: #ea580c;">📍</div>
               <div class="sede-info-text">
                 <strong>Dirección</strong>
                 <span>Salta 285, Neuquén Capital (CP 8300)</span>
               </div>
             </li>
             <li class="sede-info-item">
-              <div class="sede-icon-circle" style="color: #ea580c; background: rgba(249,115,22,0.1);">📞</div>
+              <div class="sede-icon-circle" style="color: #ea580c;">📞</div>
               <div class="sede-info-text">
                 <strong>Teléfono / WhatsApp</strong>
                 <a href="tel:+5492994042105">299 4042105</a>
               </div>
             </li>
             <li class="sede-info-item">
-              <div class="sede-icon-circle" style="color: #ea580c; background: rgba(249,115,22,0.1);">⏰</div>
+              <div class="sede-icon-circle" style="color: #ea580c;">⏰</div>
               <div class="sede-info-text">
                 <strong>Horario de Secretaría</strong>
                 <span>Lunes a Viernes: 08:30 a 12:30 y 16:00 a 20:30 hs</span>
               </div>
             </li>
             <li class="sede-info-item">
-              <div class="sede-icon-circle" style="color: #ea580c; background: rgba(249,115,22,0.1);">✨</div>
+              <div class="sede-icon-circle" style="color: #ea580c;">✨</div>
               <div class="sede-info-text">
                 <strong>Comodidades</strong>
                 <span>Aulas climatizadas, biblioteca en inglés, conectividad Wi-Fi, laboratorio auditivo.</span>
@@ -276,28 +352,28 @@
 
           <ul class="sede-info-list">
             <li class="sede-info-item">
-              <div class="sede-icon-circle" style="color: #0891b2; background: rgba(6,182,212,0.1);">📍</div>
+              <div class="sede-icon-circle" style="color: #0891b2;">📍</div>
               <div class="sede-info-text">
                 <strong>Dirección</strong>
                 <span>Rodhe 150, Neuquén Capital (CP 8300)</span>
               </div>
             </li>
             <li class="sede-info-item">
-              <div class="sede-icon-circle" style="color: #0891b2; background: rgba(6,182,212,0.1);">📞</div>
+              <div class="sede-icon-circle" style="color: #0891b2;">📞</div>
               <div class="sede-info-text">
                 <strong>Teléfono / WhatsApp</strong>
                 <a href="tel:+5492995067544">299 5067544</a>
               </div>
             </li>
             <li class="sede-info-item">
-              <div class="sede-icon-circle" style="color: #0891b2; background: rgba(6,182,212,0.1);">⏰</div>
+              <div class="sede-icon-circle" style="color: #0891b2;">⏰</div>
               <div class="sede-info-text">
                 <strong>Horario de Secretaría</strong>
                 <span>Lunes a Viernes: 08:30 a 12:30 y 16:00 a 20:30 hs</span>
               </div>
             </li>
             <li class="sede-info-item">
-              <div class="sede-icon-circle" style="color: #0891b2; background: rgba(6,182,212,0.1);">✨</div>
+              <div class="sede-icon-circle" style="color: #0891b2;">✨</div>
               <div class="sede-info-text">
                 <strong>Comodidades</strong>
                 <span>Aulas amplias, equipamiento multimedia, zona tranquila, fácil estacionamiento.</span>
@@ -319,23 +395,23 @@
     </div>
   </section>
 
-  <!-- 5. CURSOS Y PROGRAMAS ACADÉMICOS -->
+  <!-- 6. CURSOS Y PROGRAMAS ACADÉMICOS -->
   <section class="section courses-section" id="cursos">
     <div class="container">
       <div class="section-header">
-        <div class="badge badge-primary">Oferta Académica</div>
-        <h2 class="section-title">Programas Diseñados para Cada Etapa</h2>
+        <div class="badge badge-glow-blue">Oferta Académica 2026</div>
+        <h2 class="section-title">Programas para Todas las Edades y Metas</h2>
         <p class="section-subtitle">
-          Planes de estudio estructurados según el Marco Común Europeo de Referencia (MCER). Clases pensadas para que cada alumno avance a su propio ritmo con constante motivación.
+          Planes estructurados según el Marco Común Europeo (MCER). Aprendizaje progresivo donde cada estudiante avanza con seguridad y apoyo continuo.
         </p>
       </div>
 
       <!-- Filters -->
       <div class="course-tabs">
         <button class="tab-btn active" data-filter="all">Todos los Cursos</button>
-        <button class="tab-btn" data-filter="kids">Kids (4 a 10 años)</button>
-        <button class="tab-btn" data-filter="teens">Teens (11 a 17 años)</button>
-        <button class="tab-btn" data-filter="adults">Adultos</button>
+        <button class="tab-btn" data-filter="kids">Kids & Juniors</button>
+        <button class="tab-btn" data-filter="teens">Teens Program</button>
+        <button class="tab-btn" data-filter="adults">Adultos Conversación</button>
         <button class="tab-btn" data-filter="exams">Exámenes & Empresas</button>
       </div>
 
@@ -343,8 +419,8 @@
       <div class="courses-grid">
         <!-- Curso 1: Kids & Kinder -->
         <div class="course-card" data-category="kids">
-          <span class="course-badge badge-kids">Niños</span>
-          <div class="course-icon" style="background: rgba(249, 115, 22, 0.12); color: #ea580c;">🎨</div>
+          <span class="course-badge badge-kids">Niños 4-8</span>
+          <div class="course-icon" style="background: rgba(255, 107, 0, 0.15); color: #ea580c;">🎨</div>
           <h3>Kids & Kinder</h3>
           <div class="course-level">Edades: 4 a 8 años • Niveles Iniciales</div>
           <p class="course-desc">
@@ -361,8 +437,8 @@
 
         <!-- Curso 2: Juniors & Primary -->
         <div class="course-card" data-category="kids">
-          <span class="course-badge badge-kids">Primaria</span>
-          <div class="course-icon" style="background: rgba(249, 115, 22, 0.12); color: #ea580c;">📚</div>
+          <span class="course-badge badge-kids">Primaria 9-11</span>
+          <div class="course-icon" style="background: rgba(255, 107, 0, 0.15); color: #ea580c;">📚</div>
           <h3>Juniors</h3>
           <div class="course-level">Edades: 9 a 11 años • Niveles 1 al 3</div>
           <p class="course-desc">
@@ -380,7 +456,7 @@
         <!-- Curso 3: Teens -->
         <div class="course-card" data-category="teens">
           <span class="course-badge badge-teens">Adolescentes</span>
-          <div class="course-icon" style="background: rgba(6, 182, 212, 0.12); color: #0891b2;">🚀</div>
+          <div class="course-icon" style="background: rgba(6, 182, 212, 0.15); color: #0891b2;">🚀</div>
           <h3>Teens Program</h3>
           <div class="course-level">Edades: 12 a 17 años • Niveles A1 a B2</div>
           <p class="course-desc">
@@ -398,7 +474,7 @@
         <!-- Curso 4: Adultos General & Conversación -->
         <div class="course-card" data-category="adults">
           <span class="course-badge badge-adults">Adultos</span>
-          <div class="course-icon" style="background: rgba(16, 185, 129, 0.12); color: #059669;">💬</div>
+          <div class="course-icon" style="background: rgba(16, 185, 129, 0.15); color: #059669;">💬</div>
           <h3>Adultos: Conversación</h3>
           <div class="course-level">Desde Principiante hasta Avanzado</div>
           <p class="course-desc">
@@ -416,7 +492,7 @@
         <!-- Curso 5: Exámenes Internacionales -->
         <div class="course-card" data-category="exams">
           <span class="course-badge badge-exams">Certificación</span>
-          <div class="course-icon" style="background: rgba(147, 51, 234, 0.12); color: #7e22ce;">🎖️</div>
+          <div class="course-icon" style="background: rgba(139, 92, 246, 0.15); color: #7c3aed;">🎖️</div>
           <h3>Exámenes Internacionales</h3>
           <div class="course-level">Cambridge (B2 First, C1 Adv), IELTS & TOEFL</div>
           <p class="course-desc">
@@ -434,7 +510,7 @@
         <!-- Curso 6: Empresas & In-Company -->
         <div class="course-card" data-category="exams">
           <span class="course-badge badge-company">Corporativo</span>
-          <div class="course-icon" style="background: rgba(30, 58, 138, 0.12); color: #1e3a8a;">💼</div>
+          <div class="course-icon" style="background: rgba(37, 99, 235, 0.15); color: #1d4ed8;">💼</div>
           <h3>Business & In-Company</h3>
           <div class="course-level">Profesionales y Equipos Corporativos</div>
           <p class="course-desc">
@@ -452,70 +528,79 @@
     </div>
   </section>
 
-  <!-- 6. METHODOLOGY & DIFERENCIALES -->
+  <!-- 7. METHODOLOGY & DIFERENCIALES -->
   <section class="section method-section" id="metodologia">
     <div class="container">
       <div class="section-header">
-        <div class="badge badge-green">Nuestro Enfoque</div>
+        <div class="badge badge-glow-green">Nuestro Enfoque Pedagógico</div>
         <h2 class="section-title">¿Por Qué Elegir Connections English School?</h2>
         <p class="section-subtitle">
-          Más de una década formando alumnos que logran hablar inglés con naturalidad y confianza, respaldados por un equipo de docentes apasionados.
+          Más de una década formando alumnos que logran hablar inglés con soltura y confianza, respaldados por un equipo docente altamente capacitado.
         </p>
       </div>
 
       <div class="method-grid">
         <div class="method-card">
-          <div class="method-icon-box" style="background: rgba(249, 115, 22, 0.12); color: #ea580c;">
+          <div class="method-icon-box" style="background: rgba(255, 107, 0, 0.15); color: #ea580c;">
             🗣️
           </div>
           <h3>Enfoque 100% Comunicativo</h3>
           <p>
-            No memorizamos reglas aisladas. Desde el primer encuentro interactuás en inglés a través de consignas reales, role-playing y debates.
+            No memorizamos reglas aisladas. Desde el primer encuentro interactuás en inglés a través de consignas vivenciales, role-playing y debates.
           </p>
         </div>
 
         <div class="method-card">
-          <div class="method-icon-box" style="background: rgba(6, 182, 212, 0.12); color: #0891b2;">
+          <div class="method-icon-box" style="background: rgba(6, 182, 212, 0.15); color: #0891b2;">
             👥
           </div>
           <h3>Grupos Reducidos</h3>
           <p>
-            Limitamos la cantidad de estudiantes por aula para garantizar que el profesor te escuche, corrija tu pronunciación y guíe tu avance de cerca.
+            Limitamos la cantidad de alumnos por comisión para garantizar que el docente te escuche, corrija tu pronunciación y guíe tu avance personal.
           </p>
         </div>
 
         <div class="method-card">
-          <div class="method-icon-box" style="background: rgba(16, 185, 129, 0.12); color: #059669;">
+          <div class="method-icon-box" style="background: rgba(16, 185, 129, 0.15); color: #059669;">
             👩‍🏫
           </div>
           <h3>Docentes Titulados</h3>
           <p>
-            Profesores con formación académica continua, vocación pedagógica y calidez humana que motivan constantemente a cada estudiante.
+            Profesores con formación académica continua, vocación pedagógica y calidez humana que te acompañan paso a paso.
           </p>
         </div>
 
         <div class="method-card">
-          <div class="method-icon-box" style="background: rgba(147, 51, 234, 0.12); color: #9333ea;">
+          <div class="method-icon-box" style="background: rgba(139, 92, 246, 0.15); color: #8b5cf6;">
             🏅
           </div>
           <h3>Certificaciones de Nivel</h3>
           <p>
-            Evaluaciones semestrales con diplomas avalados y preparación para prestigiosos exámenes internacionales reconocidos mundialmente.
+            Evaluaciones periódicas con diplomas de progreso avalados y preparación para prestigiosos exámenes internacionales con validez mundial.
           </p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 7. INTERACTIVE PLACEMENT TEST (TEST DE NIVELACIÓN EXPRESS) -->
+  <!-- 8. INTERACTIVE PLACEMENT TEST WITH PROGRESS BAR -->
   <section class="section quiz-section" id="test-nivel">
     <div class="container">
       <div class="quiz-container">
+        <!-- Progress Bar -->
+        <div class="quiz-progress-wrapper">
+          <div class="quiz-progress-bar-bg">
+            <div class="quiz-progress-fill" id="quizProgressFill"></div>
+          </div>
+        </div>
+
         <div class="quiz-header">
-          <div class="badge badge-orange">Test Express Online</div>
+          <div class="badge badge-glow-orange" style="color: #fed7aa; border-color: rgba(255,107,0,0.4);">
+            Test Express Online
+          </div>
           <h2>Conocé tu Nivel de Inglés en 2 Minutos</h2>
           <p>
-            Respondé estas 3 preguntas rápidas para orientar tu punto de partida y luego coordiná tu entrevista de nivelación en Salta 285 o Rodhe 150.
+            Respondé estas 3 preguntas rápidas para orientar tu punto de partida y coordinar tu entrevista de nivelación en Salta 285 o Rodhe 150.
           </p>
         </div>
 
@@ -605,7 +690,7 @@
               ¡Buen trabajo! Estás listo para avanzar al siguiente escalón en Connections English School.
             </p>
 
-            <div style="margin-bottom: 1.5rem; font-weight: 700; color: #ffffff;">
+            <div style="margin-bottom: 1.5rem; font-weight: 800; color: #ffffff;">
               Elegí tu sede para enviar tu resultado y coordinar la entrevista personalizada:
             </div>
 
@@ -630,7 +715,7 @@
     </div>
   </section>
 
-  <!-- 8. INSTAGRAM COMMUNITY SHOWCASE -->
+  <!-- 9. INSTAGRAM COMMUNITY SHOWCASE -->
   <section class="section instagram-section" id="comunidad">
     <div class="container">
       <div class="section-header">
@@ -708,7 +793,7 @@
       </div>
 
       <div style="text-align: center;">
-        <a href="https://www.instagram.com/connections.english.school/" target="_blank" rel="noopener" class="btn btn-instagram" style="padding: 0.9rem 2.2rem; font-size: 1.05rem;">
+        <a href="https://www.instagram.com/connections.english.school/" target="_blank" rel="noopener" class="btn btn-instagram" style="padding: 0.95rem 2.4rem; font-size: 1.05rem;">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
           Visitar @connections.english.school en Instagram
         </a>
@@ -716,17 +801,17 @@
     </div>
   </section>
 
-  <!-- 9. CTA BANNER: CLASE DE PRUEBA GRATUITA -->
+  <!-- 10. CTA BANNER: CLASE DE PRUEBA GRATUITA -->
   <section class="cta-trial-section">
     <div class="container">
       <div class="cta-trial-box">
         <div>
-          <div class="badge badge-orange" style="background: rgba(249, 115, 22, 0.25); color: #fed7aa; border: 1px solid rgba(255,255,255,0.2);">
+          <div class="badge badge-glow-orange" style="background: rgba(255, 107, 0, 0.25); color: #fed7aa; border-color: rgba(255,255,255,0.3);">
             Sin Compromiso
           </div>
           <h2>¿Querés Vivir la Experiencia Connections?</h2>
           <p>
-            Te invitamos a coordinar una <strong>entrevista diagnóstica o clase de prueba sin cargo</strong> en la sede que elijas (Salta 285 o Rodhe 150). Conocé al equipo docente, observá la dinámica de clase y despejá todas tus dudas.
+            Te invitamos a coordinar una <strong>entrevista diagnóstica o clase de prueba sin cargo</strong> en la sede que elijas (Salta 285 o Rodhe 150). Conocé al equipo docente, observá la dinámica de clase y resolvé todas tus dudas.
           </p>
         </div>
         <div class="cta-trial-actions">
@@ -741,11 +826,11 @@
     </div>
   </section>
 
-  <!-- 10. TESTIMONIALS -->
+  <!-- 11. TESTIMONIALS -->
   <section class="section testimonials-section">
     <div class="container">
       <div class="section-header">
-        <div class="badge badge-primary">Comunidad Connections</div>
+        <div class="badge badge-glow-blue">Comunidad Connections</div>
         <h2 class="section-title">Lo Que Dicen Alumnos y Familias</h2>
         <p class="section-subtitle">
           La satisfacción de nuestra comunidad en Neuquén es nuestro mayor orgullo y compromiso.
@@ -804,11 +889,11 @@
     </div>
   </section>
 
-  <!-- 11. PREGUNTAS FRECUENTES (FAQ) -->
+  <!-- 12. PREGUNTAS FRECUENTES (FAQ) -->
   <section class="section faq-section" id="preguntas">
     <div class="container">
       <div class="section-header">
-        <div class="badge badge-primary">Respuestas Claras</div>
+        <div class="badge badge-glow-blue">Respuestas Claras</div>
         <h2 class="section-title">Preguntas Frecuentes</h2>
         <p class="section-subtitle">
           Resolvemos las dudas habituales sobre inscripciones, sedes, metodologías y horarios.
@@ -869,14 +954,14 @@
     </div>
   </section>
 
-  <!-- 12. CONTACTO & FORMULARIO INTELIGENTE -->
+  <!-- 13. CONTACTO & FORMULARIO INTELIGENTE -->
   <section class="section contact-section" id="contacto">
     <div class="container">
       <div class="contact-grid">
         <!-- Contact Info Side -->
         <div class="contact-info-card">
           <div>
-            <div class="badge badge-orange" style="color: #ffffff; background: rgba(249,115,22,0.3); border: 1px solid rgba(255,255,255,0.2);">
+            <div class="badge badge-glow-orange" style="color: #fed7aa; border-color: rgba(255,255,255,0.2);">
               Atención Personalizada
             </div>
             <h3>Estamos para Conectarte con el Idioma</h3>
@@ -956,7 +1041,7 @@
             </button>
           </form>
 
-          <div id="formSuccessBanner" style="display: none; margin-top: 1.25rem; padding: 1rem; background: #ecfdf5; border: 1px solid #6ee7b7; border-radius: var(--radius-sm); color: #065f46; font-size: 0.9rem; text-align: center;">
+          <div id="formSuccessBanner" style="display: none; margin-top: 1.25rem; padding: 1rem; background: rgba(16, 185, 129, 0.15); border: 1px solid #10b981; border-radius: var(--radius-sm); color: #34d399; font-size: 0.9rem; text-align: center;">
             ✓ ¡Gracias! Tu consulta se abrió en WhatsApp para contactarte directamente con la sede seleccionada.
           </div>
         </div>
@@ -964,14 +1049,16 @@
     </div>
   </section>
 
-  <!-- 13. FOOTER -->
+  <!-- 14. FOOTER -->
   <footer class="footer">
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
           <div class="brand-logo-wrapper">
-            <img src="logo.png" alt="Connections Logo" class="brand-logo-img">
-            <div class="brand-title" style="color: #ffffff;">
+            <div class="brand-logo-badge">
+              <img src="logo.png" onerror="if(!this.dataset.tried){this.dataset.tried='1';this.src='logo.jpg';}" alt="Connections Logo" class="brand-logo-img">
+            </div>
+            <div class="brand-title">
               Connections
               <span>English School</span>
             </div>
@@ -992,7 +1079,7 @@
           <div class="footer-sede-info">
             <strong>Sede Salta</strong>
             <span>Salta 285, Neuquén</span><br>
-            <a href="tel:+5492994042105" style="color: #f97316;">Tel: 299 4042105</a>
+            <a href="tel:+5492994042105" style="color: #ff8800;">Tel: 299 4042105</a>
           </div>
           <div class="footer-sede-info">
             <strong>Sede Rodhe</strong>
@@ -1007,7 +1094,7 @@
             <li><a href="#inicio">Inicio</a></li>
             <li><a href="#sedes">Sedes en Neuquén</a></li>
             <li><a href="#cursos">Cursos y Niveles</a></li>
-            <li><a href="#metodologia">Metodología</a></li>
+            <li><a href="#audio-lab">Laboratorio Oral</a></li>
             <li><a href="#test-nivel">Test Express Online</a></li>
             <li><a href="#comunidad">Instagram Oficial</a></li>
             <li><a href="#contacto">Contacto & Inscripción</a></li>
@@ -1038,9 +1125,8 @@
     </div>
   </footer>
 
-  <!-- 14. FLOATING MULTI-BRANCH WHATSAPP BUTTON -->
+  <!-- 15. FLOATING MULTI-BRANCH WHATSAPP BUTTON -->
   <div class="floating-whatsapp-container">
-    <!-- Popover Card -->
     <div class="wa-popover" id="waPopover">
       <div class="wa-popover-header">
         <h4>Chateá con Connections</h4>
