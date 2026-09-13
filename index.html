@@ -13,7 +13,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   
   <!-- Custom Stylesheet -->
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=2.0">
   <link rel="icon" type="image/png" href="logo.png">
   <link rel="alternate icon" type="image/svg+xml" href="logo.svg">
 </head>
@@ -53,7 +53,7 @@
         <a href="#inicio" class="brand-logo-wrapper">
           <!-- Logo Badge with padding to ensure zero clipping -->
           <div class="brand-logo-badge">
-            <img src="logo.png" onerror="if(!this.dataset.tried){this.dataset.tried='1';this.src='logo.jpg';}" alt="Connections English School Logo" class="brand-logo-img">
+            <img src="logo.png" width="64" height="64" alt="Connections English School Logo" class="brand-logo-img">
           </div>
           <div class="brand-title">
             Connections
@@ -73,7 +73,7 @@
 
         <div class="nav-actions">
           <!-- Theme Switcher Button -->
-          <button class="theme-toggle-btn" id="themeToggle" title="Cambiar tema de color" aria-label="Cambiar tema">
+          <button class="theme-toggle-btn" id="themeToggle" type="button" title="Cambiar tema de color" aria-label="Cambiar al tema claro" aria-pressed="false">
             🌙
           </button>
           <a href="https://www.instagram.com/connections.english.school/" target="_blank" rel="noopener" class="btn btn-instagram btn-sm" aria-label="Instagram">
@@ -88,7 +88,7 @@
           </a>
         </div>
 
-        <button class="mobile-toggle" id="mobileToggle" aria-label="Abrir menú" aria-expanded="false">
+          <button class="mobile-toggle" id="mobileToggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="navMenu">
           <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <line x1="3" y1="12" x2="21" y2="12"></line>
             <line x1="3" y1="6" x2="21" y2="6"></line>
@@ -165,7 +165,7 @@
             <!-- Emblem Badge: 100% complete circular view, never clipped -->
             <div class="hero-logo-box">
               <div class="hero-logo-badge">
-                <img src="logo.png" onerror="if(!this.dataset.tried){this.dataset.tried='1';this.src='logo.jpg';}" alt="Connections English School Emblema" class="hero-logo-img">
+                <img src="logo.png" width="220" height="220" alt="Connections English School Emblema" class="hero-logo-img" fetchpriority="high">
               </div>
             </div>
 
@@ -254,13 +254,13 @@
 
       <!-- Sede Filter Buttons -->
       <div class="sede-toggle-bar">
-        <button class="sede-toggle-btn active salta" data-sede="all">
+        <button class="sede-toggle-btn active salta" type="button" data-sede="all" aria-pressed="true">
           ✨ Ver Ambas Sedes
         </button>
-        <button class="sede-toggle-btn salta" data-sede="salta">
+        <button class="sede-toggle-btn salta" type="button" data-sede="salta" aria-pressed="false">
           📍 Sede Salta 285 (Centro)
         </button>
-        <button class="sede-toggle-btn rodhe" data-sede="rodhe">
+        <button class="sede-toggle-btn rodhe" type="button" data-sede="rodhe" aria-pressed="false">
           🏛️ Sede Rodhe 150 (Residencial)
         </button>
       </div>
@@ -902,51 +902,51 @@
 
       <div class="faq-accordion">
         <div class="faq-item active">
-          <button class="faq-question">
+          <button class="faq-question" type="button" aria-expanded="true" aria-controls="faq-answer-1">
             ¿Cómo sé en qué nivel debo comenzar?
             <span class="faq-icon">▼</span>
           </button>
-          <div class="faq-answer">
+          <div class="faq-answer" id="faq-answer-1">
             Realizamos una entrevista diagnóstica sin cargo en cualquiera de nuestras dos sedes (Salta 285 o Rodhe 150). Esta pequeña charla nos permite evaluar tu comprensión auditiva y oral para ubicarte exactamente en el grupo que mejor potencie tu aprendizaje.
           </div>
         </div>
 
         <div class="faq-item">
-          <button class="faq-question">
+          <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-2">
             ¿Puedo elegir cursar en la sede que me quede más cómoda?
             <span class="faq-icon">▼</span>
           </button>
-          <div class="faq-answer">
+          <div class="faq-answer" id="faq-answer-2">
             ¡Totalmente! Ambas sedes en Neuquén comparten el mismo proyecto educativo, mismo plan de estudios y misma coordinación pedagógica. Podés elegir la sede Salta (Salta 285) o la sede Rodhe (Rodhe 150) de acuerdo a tu conveniencia geográfica.
           </div>
         </div>
 
         <div class="faq-item">
-          <button class="faq-question">
+          <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-3">
             ¿A partir de qué edad pueden ingresar los niños?
             <span class="faq-icon">▼</span>
           </button>
-          <div class="faq-answer">
+          <div class="faq-answer" id="faq-answer-3">
             Recibimos a niños a partir de los 4 años en nuestros niveles Kinder. El aprendizaje en estas edades es 100% natural, centrado en el juego, canciones, cuentos e inmersión fonética.
           </div>
         </div>
 
         <div class="faq-item">
-          <button class="faq-question">
+          <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-4">
             ¿Cuáles son los horarios de cursada?
             <span class="faq-icon">▼</span>
           </button>
-          <div class="faq-answer">
+          <div class="faq-answer" id="faq-answer-4">
             Contamos con amplia variedad de turnos: por la mañana, por la tarde y vespertinos (ideales para adultos que trabajan o jóvenes con doble turno escolar). Al momento de consultar te indicamos las comisiones disponibles para tu nivel.
           </div>
         </div>
 
         <div class="faq-item">
-          <button class="faq-question">
+          <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-5">
             ¿Se entregan certificados al finalizar el año?
             <span class="faq-icon">▼</span>
           </button>
-          <div class="faq-answer">
+          <div class="faq-answer" id="faq-answer-5">
             Sí. Al completar satisfactoriamente cada ciclo lectivo, los alumnos reciben su Certificado de Nivel emitido por Connections English School con detalle analítico de competencias alcanzadas. Además, preparamos a quienes deseen rendir exámenes internacionales con validez mundial.
           </div>
         </div>
@@ -1041,7 +1041,7 @@
             </button>
           </form>
 
-          <div id="formSuccessBanner" style="display: none; margin-top: 1.25rem; padding: 1rem; background: rgba(16, 185, 129, 0.15); border: 1px solid #10b981; border-radius: var(--radius-sm); color: #34d399; font-size: 0.9rem; text-align: center;">
+          <div id="formSuccessBanner" role="status" tabindex="-1" style="display: none; margin-top: 1.25rem; padding: 1rem; background: rgba(16, 185, 129, 0.15); border: 1px solid #10b981; border-radius: var(--radius-sm); color: #34d399; font-size: 0.9rem; text-align: center;">
             ✓ ¡Gracias! Tu consulta se abrió en WhatsApp para contactarte directamente con la sede seleccionada.
           </div>
         </div>
@@ -1056,7 +1056,7 @@
         <div class="footer-brand">
           <div class="brand-logo-wrapper">
             <div class="brand-logo-badge">
-              <img src="logo.png" onerror="if(!this.dataset.tried){this.dataset.tried='1';this.src='logo.jpg';}" alt="Connections Logo" class="brand-logo-img">
+              <img src="logo.png" width="64" height="64" alt="Connections Logo" class="brand-logo-img" loading="lazy">
             </div>
             <div class="brand-title">
               Connections
@@ -1127,7 +1127,7 @@
 
   <!-- 15. FLOATING MULTI-BRANCH WHATSAPP BUTTON -->
   <div class="floating-whatsapp-container">
-    <div class="wa-popover" id="waPopover">
+    <div class="wa-popover" id="waPopover" role="dialog" aria-label="Elegir sede de WhatsApp" aria-hidden="true">
       <div class="wa-popover-header">
         <h4>Chateá con Connections</h4>
         <p>Seleccioná tu sucursal más cercana:</p>
@@ -1152,7 +1152,7 @@
     </div>
 
     <!-- Trigger Button -->
-    <button class="wa-trigger-btn" id="waTrigger" aria-label="Abrir WhatsApp multisede">
+    <button class="wa-trigger-btn" id="waTrigger" type="button" aria-label="Abrir WhatsApp multisede" aria-expanded="false" aria-controls="waPopover">
       <span class="wa-badge-pulse"></span>
       <svg viewBox="0 0 24 24">
         <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86.174.086.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.144.39-.086s1.011.477 1.184.564.289.13.332.203c.043.072.043.419-.101.824z"/>
@@ -1161,6 +1161,6 @@
   </div>
 
   <!-- Scripts -->
-  <script src="script.js"></script>
+  <script src="script.js?v=2.0"></script>
 </body>
 </html>
