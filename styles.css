@@ -2236,3 +2236,34 @@ button, input, select, textarea {
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
 }
+
+/* Enrollment-focused course actions */
+.course-schedule {
+  margin: 0.55rem 0 1rem;
+  color: var(--text-muted);
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.schedule-link {
+  color: var(--accent-orange, #f97316);
+  text-decoration: underline;
+  text-underline-offset: 0.16em;
+}
+
+.course-cta {
+  width: 100%;
+  justify-content: center;
+  margin-top: auto;
+  min-height: 46px;
+  font-weight: 800;
+}
+
+.hero-actions .btn-primary {
+  box-shadow: 0 10px 26px rgba(249, 115, 22, 0.28);
+}
+
+@media (max-width: 480px) {
+  .course-schedule { font-size: 0.78rem; }
+  .hero-actions { gap: 0.7rem; }
+}

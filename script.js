@@ -317,6 +317,27 @@ document.addEventListener('DOMContentLoaded', () => {
   const contactForm = document.getElementById('contactForm');
   const formSuccessBanner = document.getElementById('formSuccessBanner');
 
+  // Course CTAs prefill the contact form so the WhatsApp message is specific.
+  const courseCtas = document.querySelectorAll('.course-cta');
+  courseCtas.forEach(cta => {
+    cta.addEventListener('click', () => {
+      const course = cta.getAttribute('data-course');
+      const courseSelect = document.getElementById('formCourse');
+      const messageField = document.getElementById('formMessage');
+
+      if (courseSelect && course) {
+        const matchingOption = [...courseSelect.options].find(option =>
+          option.textContent.toLowerCase().includes(course.toLowerCase()) ||
+          option.value.toLowerCase().includes(course.toLowerCase())
+        );
+        if (matchingOption) courseSelect.value = matchingOption.value;
+      }
+      if (messageField && course) {
+        messageField.value = `Me interesa solicitar una clase de prueba de ${course}. Quisiera consultar horarios disponibles.`;
+      }
+    });
+  });
+
   if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
       e.preventDefault();
